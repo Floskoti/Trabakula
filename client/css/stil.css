@@ -34,3 +34,6 @@
     cursor: pointer;
     color: red;
 }
+.tab-pane{
+    padding: 20px;
+}
