@@ -1,12 +1,11 @@
-function toggleIcon(clickedIcon) {
-    // Pridobi vse ikone
-    var icons = document.querySelectorAll('.flag-icon, .regular-flag-icon');
+function toggleFlagNoSpam(clickedIcon) {
+    var icon = document.querySelector('.fa-regular');
+    clickedIcon.classList.toggle("hidden");
+    icon.classList.toggle("hidden");
+}
 
-    // Skrij vse ikone
-    icons.forEach(function(icon) {
-        icon.style.display = 'none';
-    });
-
-    // Prikaži samo kliknjeno ikono
-    clickedIcon.style.display = 'block';
+function toggleFlagSpam(clickedIcon) {
+    var icon = document.querySelector('.fa-solid');
+    clickedIcon.classList.toggle("hidden");
+    icon.classList.toggle("hidden");
 }

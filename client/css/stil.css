@@ -14,3 +14,9 @@
 .sender{
     line-height: 20px;
 }
+.nav-item:hover{
+    background-color: aliceblue;
+}
+.hidden{
+    display: none;
+}
