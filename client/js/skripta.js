@@ -41,5 +41,6 @@ function toggleFlagSpam(clickedIcon, event) {
         default: break;
     }
     
-    
 }
+
+  
