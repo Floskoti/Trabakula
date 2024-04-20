@@ -81,3 +81,7 @@
     text-decoration: none;
     cursor: pointer;
   }
+
+  .bg-li-1{
+    background-color: rgb(248, 247, 255);
+  }
