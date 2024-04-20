@@ -4,6 +4,7 @@ Imaš 3 nove emaile:
     1. Facebook Kmalu vam poteče geslo, ukrepajte kmalu --> vsebuje neko zlonamerno povezavo
     2. Janez Selski Polletno finančno poročilo --> vsebuje neko okuženo priponko
     3. Luka Petrovič Urgentni sestanek --> dejanski resničen email
+    4. Prenosko 80% popust na prenosnike
 
 1. Vsebina:
 from: support@facebok.com
