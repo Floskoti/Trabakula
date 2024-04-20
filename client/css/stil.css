@@ -21,7 +21,16 @@
     display: none;
 }
 
-button{
-    border: none;
-    
+.nav-item{
+    position: relative;
+}
+.zastava{
+    position:absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 20px;
+}
+.zastava:hover{
+    cursor: pointer;
+    color: red;
 }
