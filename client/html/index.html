@@ -11,10 +11,47 @@
     <link rel="stylesheet" href="../css/stil.css">
     <script src="../js/skripta.js"></script>
 </head>
-<body>
+<body onload="modalFunc()">
 <div class="container">
+    <!-- The Modal -->
+    <div id="myModal" class="modal" >
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="close float-end" style="width:25px;">&times;</div>
+            <div class="text-center">
+                <p>Postavljeni ste v vlogo direktorja slovenskega podjetja Butale d.o.o.</p>
+                <p>V službeni poštni predal ste prejeli nekaj novih sporočil, preglejte jih.</p>
+            </div>
+        </div>
+    
+    </div>
+    <script>
+        // Get the modal
+        var modal = document.getElementById("myModal");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+        modal.style.display = "none";
+        }
+
+        function modalFunc() {
+            modal.style.display = "block";
+        };
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+        }
+    </script>
+
     <div class="odmik-n-vrhi">
-        
+        <h1>Poštni predal</h1>
     </div>
     <div class="row">
         <div class="col-12 col-lg-4 ">
@@ -22,10 +59,10 @@
             <!-- header je z vsebino linkan preko hrefa in ID od VSEBINE -->
             <ul class="nav nav-pills">
                 <li class="nav-item d-none"><a class="nav-link active" data-bs-toggle="pill" href="#hello">Home</a></li>
-                <li class="nav-item">
+                <li class="nav-item bg-li-1">
                     <a class="nav-link" data-bs-toggle="pill" href="#home">
                         <div class="row">
-                            <div class="col-10"><div class="sender">gfdhashg</div><div class="sender">afdhdfha</div></div>
+                            <div class="col-10"><div class="sender">support@facebok.com</div><div class="sender">Pomembno: Vaše Facebook geslo potrebuje posodobitev!</div></div>
                         </div>
                     </a>
                     <div class="w-100 h-100 d-flex align-items-center justify-content-center">
@@ -38,7 +75,7 @@
             <li class="nav-item">
                 <a class="nav-link" data-bs-toggle="pill" href="#menu1">
                     <div class="row">
-                        <div class="col-10"><div class="sender">gfdhashg</div><div class="sender">afdhdfha</div></div>
+                        <div class="col-10"><div class="sender">janez.selski@butalle.si</div><div class="sender">Pomembno: Polletno finančno poročilo za direktorja</div></div>
                     </div>
                 </a>
                 <div class="w-100 h-100 d-flex align-items-center justify-content-center">
@@ -48,10 +85,10 @@
                     </div>
                 </div>
             </li>
-            <li class="nav-item">
+            <li class="nav-item bg-li-1">
                 <a class="nav-link" data-bs-toggle="pill" href="#menu2">
                     <div class="row">
-                        <div class="col-10"><div class="sender">gfdhashg</div><div class="sender">afdhdfha</div></div>
+                        <div class="col-10"><div class="sender">luka.petrovic@butale.si</div><div class="sender">Pomembno: Urgentni sestanek</div></div>
                     </div>
                 </a>
                 <div class="w-100 h-100 d-flex align-items-center justify-content-center">
@@ -77,21 +114,56 @@
         <div class="col-12 col-lg-8 ">
             <!-- mail content / vsebina -->
             <div class="tab-content">
-                <div id="hello" class="tab-pane fade show active">
-                    <h3>zijo mwz</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <div id="hello" class="tab-pane fade show active h-100">
+                    <div class="w-100 h-100 d-flex align-items-center justify-content-center">
+                        <div>
+                            <i class="fa-solid fa-envelope fa-2xl" style="color: #0d6efd;"></i>
+                            <p>Izberite sporočilo za ogled</p>
+                        </div>
+                    </div>
                 </div>
                 <div id="home" class="tab-pane fade">
-                    <h3>HOME</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <h3>Pomembno: Vaše Facebook geslo potrebuje posodobitev!</h3>
+                    <p>Spoštovani,
+
+                        Opozarjamo vas, da se približuje datum poteka vašega Facebook gesla. Za ohranjanje varnosti vašega računa je ključnega pomena, da ga posodobite čim prej.
+                        
+                        Prosimo, da sledite spodnji povezavi, da lahko nemudoma posodobite svoje geslo:
+                        [neko-zlonamerna-povezava.com]
+                        
+                        Vaša varnost je naša prednostna naloga, zato vas prosimo, da to storite čim prej. Če imate kakršna koli vprašanja ali potrebujete pomoč, se obrnite na našo podporo za stranke.
+                        
+                        Hvala vam za razumevanje in sodelovanje.
+                        
+                        Lep pozdrav,
+                        Ekipa Facebook varnosti</p>
                 </div>
                 <div id="menu1" class="tab-pane fade">
-                    <h3>Menu 1</h3>
-                    <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    <h3>Pomembno: Polletno finančno poročilo za direktorja</h3>
+                    <p>Spoštovani direktor,
+
+                        V priponki vam pošiljam polletno finančno poročilo Prosim, da si ga ogledate in preučite.
+                        
+                        Priponka: "Polletno_financno_porocilo.docx"
+                        
+                        Če imate kakršna koli vprašanja ali potrebujete dodatne informacije, se obrnite na name.
+                        
+                        Hvala za vaše sodelovanje.
+                        
+                        Lep pozdrav,
+                        Janez Selski, računovodstvo</p>
                 </div>
                 <div id="menu2" class="tab-pane fade">
-                    <h3>Menu 2</h3>
-                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+                    <h3>Pomembno: Urgentni sestanek</h3>
+                    <p>Spoštovani,
+
+                        sporočam vam, da je prišlo do velikega števila odpovedi zaposlenih.
+                        Kaj bi lahko bil vzrok še preiskujemo.
+                        Predlagam izredni sestanek z upravnim odborom in kadrovsko službo.
+                        
+                        ps. V priponki je seznam vseh, ki so oddali odpoved.
+                        
+                        Lp.</p>
                 </div>
                 <div id="menu3" class="tab-pane fade">
                     <h3>Menu 3</h3>
