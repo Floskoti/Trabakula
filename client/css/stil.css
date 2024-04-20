@@ -1,7 +1,13 @@
 .tab-content{
     background-color: whitesmoke;
-    height: calc();
+    height: calc(100vh - 25vh);
 } 
 .odmik-n-vrhi{
     margin-bottom: 50px;
+}
+.nav-pills{
+    display: block;
+}
+.nav-pills .nav-item{
+    width: 100%;
 }
