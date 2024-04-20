@@ -52,9 +52,14 @@
     height: 100%; /* Full height */
     overflow: auto; /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.1); /* Black w/ opacity */
   
+  }
+  .modalblur{
+    background-color: rgba(0,0,0,0.1); /* Black w/ opacity */
   backdrop-filter: blur(3px);
+  }
+  .modalcorrect{
+    background-color: rgba(0, 200, 0, 0.4);
   }
   /* Modal Content */
   .modal-content {
@@ -71,7 +76,7 @@
     font-weight: bold;
   }
   .close:hover,
-  .close:focus {
+  .close:focus, .closefb:hover, .closefb:focus{
     color: #000;
     text-decoration: none;
     cursor: pointer;
