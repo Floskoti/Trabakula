@@ -1,8 +1,7 @@
-.mailbody{
+.tab-content{
     background-color: whitesmoke;
-    color: black;
-}
-.mail a{
-    text-decoration: none;
-    color: black;
+    height: calc();
+} 
+.odmik-n-vrhi{
+    margin-bottom: 50px;
 }
