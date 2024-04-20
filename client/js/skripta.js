@@ -4,7 +4,7 @@ function toggleFlagNoSpam(clickedIcon) {
     icon.classList.toggle("hidden");
 }
 
-function toggleFlagSpam(clickedIcon) {
+function toggleFlagSpam(clickedIcon, event) {
     var icon = document.querySelector('.fa-solid');
     clickedIcon.classList.toggle("hidden");
     icon.classList.toggle("hidden");
