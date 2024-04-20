@@ -1,5 +1,6 @@
 ROLE-PLAY:
-Predstavljaj si, da si direktor nekega slovenskega podjetja (Butale d.o.o) in sedaj pregleduješ službeni poštni predal.
+Postavljeni ste v vlogo direktorja nekega slovenskega podjetja (Butale d.o.o) in pregledali boste službeni poštni predal.
+
 Imaš 3 nove emaile:
     1. Facebook Kmalu vam poteče geslo, ukrepajte kmalu --> vsebuje neko zlonamerno povezavo
     2. Janez Selski Polletno finančno poročilo --> vsebuje neko okuženo priponko
