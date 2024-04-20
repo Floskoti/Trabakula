@@ -1,0 +1,19 @@
+@font-face {
+    font-family: RobotoBold;
+    src: url(../../fonts/robotobold.ttf);
+}
+
+#menu{
+    font-family: RobotoBold;
+}
+
+#shoppingItems {
+    margin-top: 2vh;
+}
+
+.shoppingItem {
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 100%;
+    max-height: 100%;
+}
