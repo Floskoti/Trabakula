@@ -1,0 +1,55 @@
+ROLE-PLAY:
+Predstavljaj si, da si direktor nekega slovenskega podjetja (Butale d.o.o) in sedaj pregleduješ službeni poštni predal.
+Imaš 3 nove emaile:
+    1. Facebook Kmalu vam poteče geslo, ukrepajte kmalu --> vsebuje neko zlonamerno povezavo
+    2. Janez Selski Polletno finančno poročilo --> vsebuje neko okuženo priponko
+    3. Luka Petrovič Urgentni sestanek --> dejanski resničen email
+
+1. Vsebina:
+from: support@facebok.com
+Zadeva: Pomembno: Vaše Facebook geslo potrebuje posodobitev!
+
+Spoštovani,
+
+Opozarjamo vas, da se približuje datum poteka vašega Facebook gesla. Za ohranjanje varnosti vašega računa je ključnega pomena, da ga posodobite čim prej.
+
+Prosimo, da sledite spodnji povezavi, da lahko nemudoma posodobite svoje geslo:
+[neko-zlonamerna-povezava.com]
+
+Vaša varnost je naša prednostna naloga, zato vas prosimo, da to storite čim prej. Če imate kakršna koli vprašanja ali potrebujete pomoč, se obrnite na našo podporo za stranke.
+
+Hvala vam za razumevanje in sodelovanje.
+
+Lep pozdrav,
+Ekipa Facebook varnosti
+
+2. Vsebina:
+from: janez.selski@butalle.si
+Zadeva: Pomembno: Polletno finančno poročilo za direktorja
+
+Spoštovani direktor,
+
+V priponki vam pošiljam polletno finančno poročilo Prosim, da si ga ogledate in preučite.
+
+Priponka: "Polletno_financno_porocilo.docx"
+
+Če imate kakršna koli vprašanja ali potrebujete dodatne informacije, se obrnite na name.
+
+Hvala za vaše sodelovanje.
+
+Lep pozdrav,
+Janez Selski, računovodstvo
+
+3. Vsebina
+from: luka.petrovic@butale.si
+Zadeva: Pomembno: Urgentni sestanek
+
+Spoštovani,
+
+sporočam vam, da je prišlo do velikega števila odpovedi zaposlenih.
+Kaj bi lahko bil vzrok še preiskujemo.
+Predlagam izredni sestanek z upravnim odborom in kadrovsko službo.
+
+ps. V priponki je seznam vseh, ki so oddali odpoved.
+
+Lp.
