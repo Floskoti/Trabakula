@@ -3,7 +3,7 @@
     height: calc(100vh - 25vh);
 } 
 .odmik-n-vrhi{
-    margin-bottom: 50px;
+    margin: 20px;
 }
 .nav-pills{
     display: block;
