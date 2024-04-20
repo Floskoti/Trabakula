@@ -67,7 +67,7 @@
     margin: auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 80%;
+    width: 40%;
   }
   /* The Close Button */
   .close {
@@ -84,4 +84,12 @@
 
   .bg-li-1{
     background-color: rgb(248, 247, 255);
+  }
+
+  .container{
+    border: rgba(0,0,0,0.1) solid 3px;
+    border-radius: 5px;
+    margin-top: 20px;
+    box-shadow: 5px 10px rgba(0,0,0,0.1);
+    padding: 0;
   }
