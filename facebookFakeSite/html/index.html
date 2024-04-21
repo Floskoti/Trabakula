@@ -34,7 +34,7 @@
         </h4>
         <br/>
         <button id="myBtn" class="btn btn-success btn-lg">Da</button>
-        <button id="incorrectBtn2" class="btn btn-danger btn-lg">Ne</button>
+        <button id="incorrectBtn2" class="btn btn-danger btn-lg" onclick="showIncorrect(this)">Ne</button>
       </p>
       <br/>
     </div>
@@ -43,7 +43,7 @@
     <!-- Modal content -->
     <div class="modal-content">
         <span class="close">&times;</span>
-        <div class="alert alert-warning h3" role="alert">
+        <div id="modalText" class="alert alert-warning h3" role="alert">
           Pravilno ste označili da gre za phishing mail, ampak znaki, da gre za lažni mail in stran so bili vidni že v poštnem predalu.<br/> Morali bi prepoznati,
           da Facebook račun ne spada na službeni mail.<br/> Drugi znak je, da mail zahteva od vas hitro ukrepanje.
         </div>
