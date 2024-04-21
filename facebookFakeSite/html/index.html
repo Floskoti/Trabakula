@@ -22,16 +22,20 @@
             <input type="text" placeholder="Epoštni naslov ali mobilna številka" required />
             <input type="password" placeholder="Novo geslo" required>
             <hr/>
-            <button class="login">Išči</button>
+            <button id="incorrectBtn1" class="login" onclick="showIncorrect(this)">Išči</button>
           </form>
       </div>
     </div>
 
     <div id="footer" class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
       <p id="footerTextFacebook">
-        V primeru suma, da gre za zlonameno stran, kliknite na zastavico 
+        <h4>
+          Izberite ali menite, da gre za sumljivo stran
+        </h4>
+        <br/>
+        <button id="myBtn" class="btn btn-success btn-lg">Da</button>
+        <button id="incorrectBtn2" class="btn btn-danger btn-lg">Ne</button>
       </p>
-        <i id="myBtn" class="myBtn zastava fa-regular fa-flag regular-flag-icon" ata-toggle="tooltip" title="Označi kot sumljivo"></i>
       <br/>
     </div>
       <!-- The Modal -->
@@ -40,8 +44,8 @@
     <div class="modal-content">
         <span class="close">&times;</span>
         <div class="alert alert-warning h3" role="alert">
-          Pravilno ste označili gre za phishing mail, ampak znaki, da gre za lažni mail in stran so bili vidni že v poštnem predalu. Morali bi prepoznati,
-          da Facebook račun ne spada na službeni mail. Drugi znak je, da mail zahteva od vas hitro ukrepanje.
+          Pravilno ste označili da gre za phishing mail, ampak znaki, da gre za lažni mail in stran so bili vidni že v poštnem predalu.<br/> Morali bi prepoznati,
+          da Facebook račun ne spada na službeni mail.<br/> Drugi znak je, da mail zahteva od vas hitro ukrepanje.
         </div>
         <button type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-lg" onclick="backToMail()">Nazaj na poštni predal</button>
     </div>
