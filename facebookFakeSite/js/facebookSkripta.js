@@ -1,3 +1,4 @@
 function backToMail() {
-    window.location.href = "http://www.w3schools.com";
+    sessionStorage.setItem("flagged", true);
+    window.open("../../client/html/index.html", "_blank");
 }
