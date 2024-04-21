@@ -219,11 +219,11 @@
     </div>
 
 </div>
-<div id="myModalfb" class="modal modalincorrect" >
+<div id="myModalinc" class="modal modalincorrect" >
 
     <!-- Modal content -->
     <div class="modal-content">
-        <div class="closefb float-end" style="width:25px;">&times;</div>
+        <div class="closeinc float-end" style="width:25px;">&times;</div>
         <div class="text-center">
             <div class="alert alert-danger">
                 <p style="margin:0;">Napačno stee označili neškodljivo sporočilo</p>
@@ -272,6 +272,28 @@
         modalfbopen.style.display = "none";
     }
     }
+
+     //MODAL napacno oznako
+    // Get the modal
+    var modalinc = document.getElementById("myModalinc");
+
+    // Get the <span> element that closes the modal
+    var spaninc = document.getElementsByClassName("closeinc")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    spaninc.onclick = function() {
+    modalinc.style.display = "none";
+    }
+
+    var flaginc = document.getElementById("far3");
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(eventincopen) {
+    if (eventincopen.target == modalincopen) {
+        modaincbopen.style.display = "none";
+    }
+    }
+
 
     //MODAL ZA ODPRT MAIL
     // Get the modal
@@ -452,7 +474,7 @@ function toggleFlagSpam(clickedIcon, event) {
                     icon.classList.toggle("hidden");
                     var mail = document.getElementById("linklgit");
                      mail.classList.toggle("disabled");
-                     modalfb.style.display = "block";
+                     modalinc.style.display = "block";
                      mail.classList.toggle("active");
 
                     var pozdravbtn = document.getElementById("pozdravbtn");
