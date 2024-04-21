@@ -6,5 +6,6 @@ if(mistakeFlag != null) {
 }
 
 function nextExample() {
-    console.log("Hrepenim po sočen slastnem nasičenem z oljem burekom");
+    console.log("aha");
+    document.getElementById("shoppingItems").scrollIntoView();
 }
