@@ -122,7 +122,7 @@
                     </p>
                     <p>    
                         Prosimo, da sledite spodnji varni povezavi, da lahko nemudoma posodobite svoje geslo:
-                        <a href="#" target="_blank">facebook.com</a>
+                        <a href="../../facebookFakeSite/html/index.html" target="_blank">facebook.com</a>
                     </p>
                     <p>    
                         Lep pozdrav,
@@ -342,8 +342,10 @@ function toggleFlagSpam(clickedIcon, event) {
                     pozdravcont.classList.toggle("active");
                     pozdravcont.classList.toggle("show");
                     var pozdravcont = document.getElementById("home");
-                    pozdravcont.classList.toggle("active");
-                    pozdravcont.classList.toggle("show");
+                    if(pozdravcont.classList.contains("active")){
+                        pozdravcont.classList.toggle("active");
+                        pozdravcont.classList.toggle("show");
+                    }
                      break;
         case "far1open": clickedIcon.classList.toggle("hidden");
                     var icon = document.querySelector('#fas1open');
