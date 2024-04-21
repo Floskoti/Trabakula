@@ -22,6 +22,7 @@
             <div class="text-center">
                 <p>Postavljeni ste v vlogo direktorja slovenskega podjetja Butale d.o.o.</p>
                 <p>V službeni poštni predal ste prejeli nekaj novih sporočil, preglejte jih.</p>
+                <p>Z zastavico lahko označite sumljiva sporočila.</p>
             </div>
         </div>
     
@@ -37,7 +38,7 @@
             <!-- mail headerji -->
             <!-- header je z vsebino linkan preko hrefa in ID od VSEBINE -->
             <ul class="nav nav-pills">
-                <li class="nav-item d-none"><a class="nav-link active" data-bs-toggle="pill" href="#hello">Home</a></li>
+                <li class="nav-item d-none"><a id="pozdravbtn" class="nav-link active" data-bs-toggle="pill" href="#hello">Home</a></li>
                 <li class="nav-item bg-li-1 ">
                     <a class="nav-link" id="linkfb" data-bs-toggle="pill" href="#home">
                         <div class="row">
@@ -106,6 +107,10 @@
                         <h3 class="from-tag" style="display: inline-block;">F</h3>
                         <span style="position: relative; top: -10px">Facebook</span>
                         <span style="position: relative; left: -71px; top: 5px">To: direktor@butale.si</span>
+                        <div class="zastava">
+                            <i id="fas1open" class="fa-solid fa-flag flag-icon hidden" onclick="toggleFlagNoSpam(this)" style="color: red;" data-toggle="tooltip" title="Označi kot nesumljivo"></i>
+                            <i id="far1open" class="fa-regular fa-flag regular-flag-icon" onclick="toggleFlagSpam(this)"data-toggle="tooltip" title="Označi kot sumljivo"></i>
+                        </div>
                     </div>
                     
                     <br>
@@ -116,7 +121,7 @@
                     </p>
                     <p>    
                         Prosimo, da sledite spodnji varni povezavi, da lahko nemudoma posodobite svoje geslo:
-                        <a href="#">facebook.com</a>
+                        <a href="#" target="_blank">facebook.com</a>
                     </p>
                     <p>    
                         Lep pozdrav,
@@ -167,7 +172,9 @@
     <div class="modal-content">
         <div class="closefb float-end" style="width:25px;">&times;</div>
         <div class="text-center">
-            <p>Pravilno ste označili sumljivo sporočilo</p>
+            <div class="alert alert-success">
+                <p style="margin:0;">Pravilno ste označili sumljivo sporočilo</p>
+            </div>
             <p>Kljub da je naslov zahteval takojšnjo pozornost, se splača podrobno pogledati ime in domeno pošiljateljevega naslova.
                 Pozornost bi nam moralo pritegniti tudi dejstvo da ne uporabljamo službenega računa za prijavo na socialna omrežja.
             </p>
@@ -175,7 +182,25 @@
     </div>
 
 </div>
+<div id="myModalfbopen" class="modal modalwarn" >
+
+    <!-- Modal content -->
+    <div class="modal-content">
+        <div class="closefbopen float-end" style="width:25px;">&times;</div>
+        <div class="text-center">
+            <div class="alert alert-warning">
+                <p>POZOR!<br>Pravilno ste označili sumljivo sporočilo, vendar bi ga lahko prepoznali že prej</p>
+            </div>
+            <p>Odločili ste se odpreti sporočilo in potem ste ugotovili da sporočilo izgleda sumljivo. 
+                Branje sporočila vam je dalo še malo časa za razmislek, vendar to pomeni, da ste premalo natančno
+                prebrali podatke o pošiljatelju in naslov sporočila.
+            </p>
+        </div>
+    </div>
+
+</div>
 <script>
+    //MODAL ZA USPESNO PREPOZNAN MAIL
     // Get the modal
     var modalfb = document.getElementById("myModalfb");
 
@@ -190,9 +215,30 @@
     var flagfb = document.getElementById("far1");
 
     // When the user clicks anywhere outside of the modal, close it
-    window.onclick = function(eventfb) {
-    if (eventfb.target == modalfb) {
-        modalfb.style.display = "none";
+    window.onclick = function(eventfbopen) {
+    if (eventfbopen.target == modalfbopen) {
+        modalfbopen.style.display = "none";
+    }
+    }
+
+    //MODAL ZA ODPRT MAIL
+    // Get the modal
+    var modalfbopen = document.getElementById("myModalfbopen");
+
+    // Get the <span> element that closes the modal
+    var spanfbopen = document.getElementsByClassName("closefbopen")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    spanfbopen.onclick = function() {
+    modalfbopen.style.display = "none";
+    }
+
+    var flagfbopen = document.getElementById("far1open");
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(eventfbopen) {
+    if (eventfbopen.target == modalfbopen) {
+        modalfbopen.style.display = "none";
     }
     }
 
@@ -227,6 +273,20 @@
                      icon.classList.toggle("hidden");
                     var mail = document.getElementById("linkfb");
                      mail.classList.toggle("disabled");
+                    var icon = document.querySelector('#far1open');
+                     icon.classList.toggle("hidden");
+                    var icon = document.querySelector('#fas1open');
+                    icon.classList.toggle("hidden");
+                     break;
+        case "fas1open": clickedIcon.classList.toggle("hidden");
+                    var icon = document.querySelector('#far1open');
+                     icon.classList.toggle("hidden");
+                    var icon = document.querySelector('#fas1');
+                    icon.classList.toggle("hidden");
+                    var icon = document.querySelector('#far1');
+                     icon.classList.toggle("hidden");
+                    var mail = document.getElementById("linkfb");
+                     mail.classList.toggle("disabled");
                      break;
         case "fas2": clickedIcon.classList.toggle("hidden");
                     var icon = document.querySelector('#far2');
@@ -252,6 +312,34 @@ function toggleFlagSpam(clickedIcon, event) {
                     var mail = document.getElementById("linkfb");
                      mail.classList.toggle("disabled");
                      modalfb.style.display = "block";
+                     mail.classList.toggle("active");
+
+                    var pozdravbtn = document.getElementById("pozdravbtn");
+                    pozdravbtn.classList.toggle("active");
+                    var pozdravcont = document.getElementById("hello");
+                    pozdravcont.classList.toggle("active");
+                    pozdravcont.classList.toggle("show");
+                    var pozdravcont = document.getElementById("home");
+                    pozdravcont.classList.toggle("active");
+                    pozdravcont.classList.toggle("show");
+                     break;
+        case "far1open": clickedIcon.classList.toggle("hidden");
+                    var icon = document.querySelector('#fas1open');
+                    icon.classList.toggle("hidden");
+                    var icon = document.querySelector('#far1');
+                     icon.classList.toggle("hidden");
+                    var icon = document.querySelector('#fas1');
+                    icon.classList.toggle("hidden");
+                    var mail = document.getElementById("linkfb");
+                     mail.classList.toggle("disabled");
+                     mail.classList.toggle("active");
+
+                    var pozdravbtn = document.getElementById("pozdravbtn");
+                    pozdravbtn.classList.toggle("active");
+                    var pozdravcont = document.getElementById("hello");
+                    pozdravcont.classList.toggle("active");
+                    pozdravcont.classList.toggle("show");
+                     modalfbopen.style.display = "block";
                      break;
         case "far2": clickedIcon.classList.toggle("hidden");
                     var icon = document.querySelector('#fas2');
