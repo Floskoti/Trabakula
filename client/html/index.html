@@ -147,7 +147,7 @@
                     <p>
                         V priponki vam pošiljam polletno finančno poročilo Prosim, da si ga ogledate in preučite.
                     </p>
-                    <a href="#">  
+                    <a onclick="modalFuncNateg()" href="#">  
                         <i class="fa-solid fa-file-word"></i> 
                         "Polletno_financno_porocilo.docx"
                     </a> <br>
@@ -234,6 +234,25 @@
     </div>
 
 </div>
+<div id="myModalnateg" class="modal modalnateg" >
+
+    <!-- Modal content -->
+    <div class="modal-content">
+        <div class="closenateg float-end" style="width:25px;">&times;</div>
+        <div class="text-center">
+            <div class="alert alert-danger">
+                <p style="margin:0;">NEVARNOST!</p>
+            </div>
+            <p>
+                Poskušali ste prenesti priponko, ki je najverjetneje okužena. Bila je poslana z domene podobne domeni vašega podjetja.
+            </p>
+            <p>
+                To bi lahko privedlo do kraje podatkov, vdor v sisteme in drugih kritičnih problemov.
+            </p>
+        </div>
+    </div>
+
+</div>
 <div id="myModalfbopen" class="modal modalwarn" >
 
     <!-- Modal content -->
@@ -270,6 +289,30 @@
     window.onclick = function(eventfbopen) {
     if (eventfbopen.target == modalfbopen) {
         modalfbopen.style.display = "none";
+    }
+    }
+
+    //MODAL ZA NATEG PREPOZNAN MAIL
+    // Get the modal
+    var modalnateg = document.getElementById("myModalnateg");
+
+    // Get the <span> element that closes the modal
+    var spannateg = document.getElementsByClassName("closenateg")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    spannateg.onclick = function() {
+    modalnateg.style.display = "none";
+    }
+
+   
+    function modalFuncNateg() {
+        modalnateg.style.display = "block";
+    };
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(eventnategopen) {
+    if (eventnategopen.target == modalnategopen) {
+        modalnategopen.style.display = "none";
     }
     }
 
