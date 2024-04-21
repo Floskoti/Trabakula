@@ -8,6 +8,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/8267f10a37.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../css/stil.css">
+    <script defer src="../js/modalSkripta.js"></script>
+    <script defer src="../js/shopSkripta.js"></script>
 </head>
 <body>
   <nav id="menu" class="navbar navbar-expand-lg bg-body-tertiary">
@@ -74,20 +76,27 @@
     </div>
   </div>
 
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h3 class="alert alert-danger h3" role="alert">
+          Pregled znakov lažne strani
+        </h3>
+        <p>Najbolj jasen znak, da gre za lažno stran je povezava do strani. Če stran oponaša obstoječo stran, bo imela povezavo, ki je nekaj naključnega kot: dfjbfsodhf.ti, ali pa nekaj bodobnega kot original primer: <span class="text-danger">Facbok.com</span> <br/>
+        Ne zaupajte stranem, ki se ne začnejo z <span class="text-danger">https://</span> !</p>
+        <img id="url" src="../images/suspiciousUrl.png">
+        <button id="myBtn" type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-lg" onclick="nextExample()">Naslednja napaka</button>
+    </div>
+
+</div>
+
   <div id="footer" class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
     <p id="footerText">
-    © 2024 Copyright: Prenosko
+      Leto ustvaritve: 2024
     </p>
   </div>
-
-  <script>
-    var mistakeFlag = sessionStorage.getItem("mistakeFlag");
-    console.log(mistakeFlag);
-    if(mistakeFlag != null && document.getElementById("showMistakes") != null ) {
-        console.log(mistakeFlag);
-        var showMistakes = document.getElementById("showMistakes");
-        showMistakes.innerHTML = mistakeFlag;
-    }
-  </script>
 </body>
 </html>

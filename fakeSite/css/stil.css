@@ -16,6 +16,10 @@ body {
     height: 10vh;
 }
 
+#url {
+    max-width: 600px;
+}
+
 .shoppingItem {
     margin-top: 1vh;
     @media (max-width: 575.98px) {
