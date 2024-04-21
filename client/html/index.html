@@ -53,7 +53,7 @@
                     </div>
             </li>
             <li class="nav-item">
-                <a class="nav-link" data-bs-toggle="pill" href="#menu1">
+                <a id="link3" class="nav-link" data-bs-toggle="pill" href="#menu1">
                     <div class="row">
                         <div class="col-10"><div class="sender">janez.selski@butalle.si</div><div class="sender">Pomembno: Polletno finančno poročilo za direktorja</div></div>
                     </div>
@@ -66,7 +66,7 @@
                 </div>
             </li>
             <li class="nav-item bg-li-1">
-                <a class="nav-link" data-bs-toggle="pill" href="#menu2">
+                <a id="linklgit" class="nav-link" data-bs-toggle="pill" href="#menu2">
                     <div class="row">
                         <div class="col-10"><div class="sender">luka.petrovic@butale.si</div><div class="sender">Pomembno: Urgentni sestanek</div></div>
                     </div>
@@ -134,11 +134,11 @@
                 <div id="menu1" class="tab-pane fade">
                     <div class="from-div">
                         <h3 class="from-tag" style="display: inline-block;">P</h3>
-                        <span style="position: relative; top: -10px">Butale</span>
+                        <span style="position: relative; top: -10px">Butalle</span>
                         <span style="position: relative; left: -48px; top: 5px">To: direktor@butale.si</span>
                         <div class="zastava">
-                            <i id="fas4open" class="fa-solid fa-flag flag-icon hidden" onclick="toggleFlagNoSpam(this)" style="color: red;" data-toggle="tooltip" title="Označi kot nesumljivo"></i>
-                            <i id="far4open" class="fa-regular fa-flag regular-flag-icon" onclick="toggleFlagSpam(this)"data-toggle="tooltip" title="Označi kot sumljivo"></i>
+                            <i id="fas2open" class="fa-solid fa-flag flag-icon hidden" onclick="toggleFlagNoSpam(this)" style="color: red;" data-toggle="tooltip" title="Označi kot nesumljivo"></i>
+                            <i id="far2open" class="fa-regular fa-flag regular-flag-icon" onclick="toggleFlagSpam(this)"data-toggle="tooltip" title="Označi kot sumljivo"></i>
                         </div>
                         <h5>Zadeva: Polletno finančno poročilo</h5>
                     </div>
@@ -147,15 +147,25 @@
                     <p>
                         V priponki vam pošiljam polletno finančno poročilo Prosim, da si ga ogledate in preučite.
                     </p>
-                    <p>  
+                    <a href="#">  
                         <i class="fa-solid fa-file-word"></i> 
                         "Polletno_financno_porocilo.docx"
-                    </p> 
+                    </a> <br>
                         Če imate kakršna koli vprašanja ali potrebujete dodatne informacije, se obrnite na name.
                     </p>
                 </div>
                 <div id="menu2" class="tab-pane fade">
-                    <h3>Pomembno: Urgentni sestanek</h3>
+                    <div class="from-div">
+                        <h3 class="from-tag" style="display: inline-block;">P</h3>
+                        <span style="position: relative; top: -10px">Butale</span>
+                        <span style="position: relative; left: -48px; top: 5px">To: direktor@butale.si</span>
+                        <div class="zastava">
+                            <i id="fas3open" class="fa-solid fa-flag flag-icon hidden" onclick="toggleFlagNoSpam(this)" style="color: red;" data-toggle="tooltip" title="Označi kot nesumljivo"></i>
+                            <i id="far3open" class="fa-regular fa-flag regular-flag-icon" onclick="toggleFlagSpam(this)"data-toggle="tooltip" title="Označi kot sumljivo"></i>
+                        </div>
+                        <h5>Zadeva: Pomembno: Urgentni sestanek</h5>
+                    </div>
+                    <br>
                     <p>Spoštovani,
 
                         sporočam vam, da je prišlo do velikega števila odpovedi zaposlenih.
@@ -327,10 +337,22 @@
         case "fas2": clickedIcon.classList.toggle("hidden");
                     var icon = document.querySelector('#far2');
                      icon.classList.toggle("hidden");
+                    var mail = document.getElementById("link3");
+                     mail.classList.toggle("disabled");
+                    var icon = document.querySelector('#far2open');
+                     icon.classList.toggle("hidden");
+                    var icon = document.querySelector('#fas2open');
+                    icon.classList.toggle("hidden");
                      break;
         case "fas3": clickedIcon.classList.toggle("hidden");
                     var icon = document.querySelector('#far3');
                      icon.classList.toggle("hidden");
+                    var mail = document.getElementById("linklgit");
+                     mail.classList.toggle("disabled");
+                    var icon = document.querySelector('#far3open');
+                     icon.classList.toggle("hidden");
+                    var icon = document.querySelector('#fas3open');
+                    icon.classList.toggle("hidden");
                      break;
         case "fas4": clickedIcon.classList.toggle("hidden");
                     var icon = document.querySelector('#far4');
@@ -402,12 +424,42 @@ function toggleFlagSpam(clickedIcon, event) {
                      break;
         case "far2": clickedIcon.classList.toggle("hidden");
                     var icon = document.querySelector('#fas2');
-                     icon.classList.toggle("hidden");
+                    icon.classList.toggle("hidden");
+                    var mail = document.getElementById("link3");
+                     mail.classList.toggle("disabled");
+                     modalfb.style.display = "block";
+                     mail.classList.toggle("active");
+
+                    var pozdravbtn = document.getElementById("pozdravbtn");
+                    pozdravbtn.classList.toggle("active");
+                    var pozdravcont = document.getElementById("hello");
+                    pozdravcont.classList.toggle("active");
+                    pozdravcont.classList.toggle("show");
+                    var pozdravcont = document.getElementById("home");
+                    if(pozdravcont.classList.contains("active")){
+                        pozdravcont.classList.toggle("active");
+                        pozdravcont.classList.toggle("show");
+                    }
                      break;
         case "far3": clickedIcon.classList.toggle("hidden");
-                     var icon = document.querySelector('#fas3');
-                      icon.classList.toggle("hidden");
-                      break;
+                    var icon = document.querySelector('#fas3');
+                    icon.classList.toggle("hidden");
+                    var mail = document.getElementById("linklgit");
+                     mail.classList.toggle("disabled");
+                     modalfb.style.display = "block";
+                     mail.classList.toggle("active");
+
+                    var pozdravbtn = document.getElementById("pozdravbtn");
+                    pozdravbtn.classList.toggle("active");
+                    var pozdravcont = document.getElementById("hello");
+                    pozdravcont.classList.toggle("active");
+                    pozdravcont.classList.toggle("show");
+                    var pozdravcont = document.getElementById("home");
+                    if(pozdravcont.classList.contains("active")){
+                        pozdravcont.classList.toggle("active");
+                        pozdravcont.classList.toggle("show");
+                    }
+                     break;
         case "far4": clickedIcon.classList.toggle("hidden");
                     var icon = document.querySelector('#fas4');
                     icon.classList.toggle("hidden");
