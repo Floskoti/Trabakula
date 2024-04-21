@@ -1,6 +1,6 @@
 var mistakeFlag = sessionStorage.getItem("mistakeFlag");
 console.log(mistakeFlag);
-if(mistakeFlag != null && document.getElementById("showMistakes") != null ) {
+if(mistakeFlag != null) {
     console.log("ehmed " + mistakeFlag);
     document.getElementById("myModal").style.display = "block";
 }
