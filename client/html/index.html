@@ -73,15 +73,15 @@
                 </a>
                 <div class="w-100 h-100 d-flex align-items-center justify-content-center">
                     <div class="zastava">
-                        <i id="fas3" class="fa-solid fa-flag flag-icon hidden" onclick="toggleFlagNoSpam(this)" style="color: red;" data-toggle="tooltip" title="Označi kot nesumljivo"></i>
-                        <i id="far3" class="fa-regular fa-flag regular-flag-icon" onclick="toggleFlagSpam(this)"data-toggle="tooltip" title="Označi kot sumljivo"></i>
+                        <i id="fas4open" class="fa-solid fa-flag flag-icon hidden" onclick="toggleFlagNoSpam(this)" style="color: red;" data-toggle="tooltip" title="Označi kot nesumljivo"></i>
+                        <i id="far4open" class="fa-regular fa-flag regular-flag-icon" onclick="toggleFlagSpam(this)"data-toggle="tooltip" title="Označi kot sumljivo"></i>
                     </div>
                 </div>
             </li>
             <li class="nav-item">
                 <a class="nav-link" data-bs-toggle="pill" href="#menu3">
                     <div class="row">
-                        <div class="col-10"><div class="sender">gfdhashg</div><div class="sender">afdhdfha</div></div>
+                        <div class="col-10"><div class="sender">prodaja@prenosko.xxz.co</div><div class="sender">Neverjetno visoki popusti za podjetja!</div></div>
                     </div>
                 </a>
                 <div class="w-100 h-100 d-flex align-items-center justify-content-center">
@@ -111,6 +111,7 @@
                             <i id="fas1open" class="fa-solid fa-flag flag-icon hidden" onclick="toggleFlagNoSpam(this)" style="color: red;" data-toggle="tooltip" title="Označi kot nesumljivo"></i>
                             <i id="far1open" class="fa-regular fa-flag regular-flag-icon" onclick="toggleFlagSpam(this)"data-toggle="tooltip" title="Označi kot sumljivo"></i>
                         </div>
+                        <h5>Zadeva: Vaše geslo potrebuje obnovitev!</h5>
                     </div>
                     
                     <br>
@@ -158,7 +159,18 @@
                         Lp.</p>
                 </div>
                 <div id="menu3" class="tab-pane fade">
-                    <h3>Menu 3</h3>
+                    <div class="from-div">
+                        <h3 class="from-tag" style="display: inline-block;">P</h3>
+                        <span style="position: relative; top: -10px">Prenosko</span>
+                        <span style="position: relative; left: -71px; top: 5px">To: direktor@butale.si</span>
+                        <div class="zastava">
+                            <i id="fas1open" class="fa-solid fa-flag flag-icon hidden" onclick="toggleFlagNoSpam(this)" style="color: red;" data-toggle="tooltip" title="Označi kot nesumljivo"></i>
+                            <i id="far1open" class="fa-regular fa-flag regular-flag-icon" onclick="toggleFlagSpam(this)"data-toggle="tooltip" title="Označi kot sumljivo"></i>
+                        </div>
+                        <h5>Zadeva: Neverjetno visoki popusti za podjetja!</h5>
+                    </div>
+                    <br>
+                    <br>
                     <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
                 </div>
             </div>
@@ -299,6 +311,16 @@
         case "fas4": clickedIcon.classList.toggle("hidden");
                     var icon = document.querySelector('#far4');
                      icon.classList.toggle("hidden");
+                     break;
+        case "fas4open": clickedIcon.classList.toggle("hidden");
+                    var icon = document.querySelector('#far4open');
+                     icon.classList.toggle("hidden");
+                    var icon = document.querySelector('#fas4');
+                    icon.classList.toggle("hidden");
+                    var icon = document.querySelector('#far4');
+                     icon.classList.toggle("hidden");
+                    var mail = document.getElementById("linkpr");
+                     mail.classList.toggle("disabled");
                      break;
         default: break;
     }
