@@ -320,8 +320,10 @@ function toggleFlagSpam(clickedIcon, event) {
                     pozdravcont.classList.toggle("active");
                     pozdravcont.classList.toggle("show");
                     var pozdravcont = document.getElementById("home");
-                    pozdravcont.classList.toggle("active");
-                    pozdravcont.classList.toggle("show");
+                    if(pozdravcont.classList.contains("active")){
+                        pozdravcont.classList.toggle("active");
+                        pozdravcont.classList.toggle("show");
+                    }
                      break;
         case "far1open": clickedIcon.classList.toggle("hidden");
                     var icon = document.querySelector('#fas1open');
