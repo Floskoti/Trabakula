@@ -24,28 +24,12 @@ body {
   align-items: center;
 }
 
-.name-content {
-  margin-right: 7rem;
-}
-
-.name-content .logo {
-  font-size: 3.5rem;
-  color: #1877f2;
-}
-
-.name-content p {
-  font-size: 1.3rem;
-  font-weight: 500;
-  margin-bottom: 5rem;
-}
-
 form {
   display: flex;
   flex-direction: column;
   background: #fff;
   padding: 2rem;
-  width: 530px;
-  height: 380px;
+  width: 830px;
   border-radius: 0.5rem;
   box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
 }
@@ -113,11 +97,6 @@ form .create-account:hover {
     font-size: 60%;
   }
 
-  .name-content {
-    margin: 0;
-    text-align: center;
-  }
-
   form {
     width: 300px;
     height: fit-content;
@@ -151,11 +130,6 @@ form .create-account:hover {
     font-size: 60%;
   }
 
-  .name-content {
-    margin: 0;
-    text-align: center;
-  }
-
   form {
     width: 300px;
     height: fit-content;
@@ -187,11 +161,6 @@ form .create-account:hover {
 @media (min-width: 769px) and (max-width: 1200px) {
   html {
     font-size: 60%;
-  }
-
-  .name-content {
-    margin: 0;
-    text-align: center;
   }
 
   form {
