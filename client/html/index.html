@@ -132,19 +132,27 @@
                     <i class="fa-brands fa-facebook fa-2xl"></i>
                 </div>
                 <div id="menu1" class="tab-pane fade">
-                    <h3>Pomembno: Polletno finančno poročilo za direktorja</h3>
-                    <p>Spoštovani direktor,
-
+                    <div class="from-div">
+                        <h3 class="from-tag" style="display: inline-block;">P</h3>
+                        <span style="position: relative; top: -10px">Butale</span>
+                        <span style="position: relative; left: -48px; top: 5px">To: direktor@butale.si</span>
+                        <div class="zastava">
+                            <i id="fas4open" class="fa-solid fa-flag flag-icon hidden" onclick="toggleFlagNoSpam(this)" style="color: red;" data-toggle="tooltip" title="Označi kot nesumljivo"></i>
+                            <i id="far4open" class="fa-regular fa-flag regular-flag-icon" onclick="toggleFlagSpam(this)"data-toggle="tooltip" title="Označi kot sumljivo"></i>
+                        </div>
+                        <h5>Zadeva: Polletno finančno poročilo</h5>
+                    </div>
+                    <br>
+                    <p>Spoštovani direktor,</p>
+                    <p>
                         V priponki vam pošiljam polletno finančno poročilo Prosim, da si ga ogledate in preučite.
-                        
-                        Priponka: "Polletno_financno_porocilo.docx"
-                        
+                    </p>
+                    <p>  
+                        <i class="fa-solid fa-file-word"></i> 
+                        "Polletno_financno_porocilo.docx"
+                    </p> 
                         Če imate kakršna koli vprašanja ali potrebujete dodatne informacije, se obrnite na name.
-                        
-                        Hvala za vaše sodelovanje.
-                        
-                        Lep pozdrav,
-                        Janez Selski, računovodstvo</p>
+                    </p>
                 </div>
                 <div id="menu2" class="tab-pane fade">
                     <h3>Pomembno: Urgentni sestanek</h3>
@@ -190,6 +198,21 @@
             </div>
             <p>Kljub temu, da je naslov zahteval takojšnjo pozornost, se splača podrobno pogledati ime in domeno pošiljateljevega naslova.
                 Pozornost bi nam moralo pritegniti tudi dejstvo, da ne uporabljamo službenega računa za prijavo na socialna omrežja.
+            </p>
+        </div>
+    </div>
+
+</div>
+<div id="myModalfb" class="modal modalincorrect" >
+
+    <!-- Modal content -->
+    <div class="modal-content">
+        <div class="closefb float-end" style="width:25px;">&times;</div>
+        <div class="text-center">
+            <div class="alert alert-danger">
+                <p style="margin:0;">Napačno stee označili neškodljivo sporočilo</p>
+            </div>
+            <p>Domena pošiljateljevega naslova je domena vašega podjetja. Sporočilo ni bilo zlonamerno. V tem primeru je pomembnejša pravilna domena, saj zaposleni dobijo poštni naslov, ko so zaposleni v podjetju, zato zunanja oseba ne more imeti poštnega naslova z domeno podjetja.
             </p>
         </div>
     </div>

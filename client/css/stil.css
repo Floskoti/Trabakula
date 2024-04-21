@@ -61,6 +61,9 @@
   .modalcorrect{
     background-color: rgba(255, 255, 255, 0.4);
   }
+  .modalincorrect{
+    background-color: rgba(255, 255, 255, 0.4);
+  }
   .modalwarn{
     background-color: rgba(255, 255, 255, 0.4);
   }
