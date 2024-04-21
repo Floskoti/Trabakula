@@ -90,6 +90,14 @@ form .create-account:hover {
   cursor: pointer;
 }
 
+#footer {
+    height: 10vh;
+}
+
+#footerText {
+    margin-top: 1.6vh;
+}
+
 /* //.........Media Query.........// */
 
 @media (max-width: 500px) {
