@@ -1,4 +1,4 @@
 function backToMail() {
-    sessionStorage.setItem("flagged", true);
+    console.log("ej ti");
     window.open("../../client/html/index.html", "_blank");
 }
