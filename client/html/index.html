@@ -31,7 +31,7 @@
     </script>
 
     <div class="odmik-n-vrhi">
-        <h1>Poštni predal</h1>
+        <h1>POŠTNI PREDAL</h1>
     </div>
     <div class="row">
         <div class="col-12 col-lg-4 ">
@@ -40,19 +40,23 @@
             <ul class="nav nav-pills">
                 <li class="nav-item d-none"><a id="pozdravbtn" class="nav-link active" data-bs-toggle="pill" href="#hello">Home</a></li>
                 <li class="nav-item bg-li-1 ">
+                    <div id="overlay-fb" class="overlay-btn" onclick="areYouSure('fbopenareyousure')">
+                    </div>
                     <a class="nav-link" id="linkfb" data-bs-toggle="pill" href="#home">
                         <div class="row">
                             <div class="col-10"><div class="sender">support@facebok.com</div><div class="sender">Pomembno: Vaše Facebook geslo potrebuje posodobitev!</div></div>
                         </div>
                     </a>
                     <div class="w-100 h-100 d-flex align-items-center justify-content-center">
-                        <div class="zastava">
+                        <div class="zastava" style="position: absolute; z-index: 2;">
                             <i id="fas1" class="fa-solid fa-flag flag-icon hidden" onclick="toggleFlagNoSpam(this)" style="color: red;" data-toggle="tooltip" title="Označi kot nesumljivo"></i>
                             <i id="far1" class="fa-regular fa-flag regular-flag-icon" onclick="toggleFlagSpam(this)"data-toggle="tooltip" title="Označi kot sumljivo"></i>
                         </div>
                     </div>
             </li>
             <li class="nav-item">
+                <div id="overlay-po" class="overlay-btn" onclick="areYouSure('poopenareyousure')">
+                </div>
                 <a id="link3" class="nav-link" data-bs-toggle="pill" href="#menu1">
                     <div class="row">
                         <div class="col-10"><div class="sender">janez.selski@butalle.si</div><div class="sender">Pomembno: Polletno finančno poročilo za direktorja</div></div>
@@ -93,7 +97,7 @@
         </div>
         <div class="col-12 col-lg-8 ">
             <!-- mail content / vsebina -->
-            <div class="tab-content">
+            <div id="mailcontent" class="tab-content">
                 <div id="hello" class="tab-pane fade show active h-100">
                     <div class="w-100 h-100 d-flex align-items-center justify-content-center">
                         <div class="text-center">
@@ -270,7 +274,40 @@
             </p>
         </div>
     </div>
+</div>
 
+<div id="fbopenareyousure" class="modal modalwarn" >
+
+    <!-- Modal content -->
+    <div class="modal-content">
+        <div class="text-center">
+            <div class="alert alert-warning">
+                <p>POZOR!<br>Prepričajte se, da ste dobro pregledali naslov pošiljatelja, predvsem njegovo domeno.</p>
+            </div>
+            <p>Ali želite nadaljevati z odpiranjem e-sporočila?
+            </p>
+            <br>
+            <button id="myBtn" class="btn btn-success btn-lg" onclick="areYouSureYes('fbopenareyousure', 'overlay-fb', 'linkfb', 'home')">Da</button>
+            <button id="incorrectBtn2" class="btn btn-danger btn-lg" onclick="areYouSureNo('fbopenareyousure')">Ne</button>
+        </div>
+    </div>
+</div>
+
+<div id="poopenareyousure" class="modal modalwarn" >
+
+    <!-- Modal content -->
+    <div class="modal-content">
+        <div class="text-center">
+            <div class="alert alert-warning">
+                <p>POZOR!<br>Prepričajte se, da ste dobro pregledali naslov pošiljatelja, predvsem njegovo domeno.</p>
+            </div>
+            <p>Ali želite nadaljevati z odpiranjem e-sporočila?
+            </p>
+            <br>
+            <button id="myBtn" class="btn btn-success btn-lg" onclick="areYouSureYes('poopenareyousure', 'overlay-po', 'link3', 'menu1')">Da</button>
+            <button id="incorrectBtn2" class="btn btn-danger btn-lg" onclick="areYouSureNo('poopenareyousure')">Ne</button>
+        </div>
+    </div>
 </div>
 <script>
     //MODAL ZA USPESNO PREPOZNAN MAIL
