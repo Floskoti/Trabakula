@@ -1,3 +1,97 @@
+<?php  
+// Preveri ali uporabnik že obstaja v bazi
+function checkIfUserExists(){
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "phishing";
+
+    // Create connection
+    $conn = new mysqli($servername, $username, $password, $dbname);
+    // Check connection
+    if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+    }
+
+    $sql = "SELECT ip FROM zaposleni";
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+        if($row["ip"] == $_SERVER['REMOTE_ADDR']){
+            return true;
+        }
+    }
+    } else {
+    return false;
+    }
+    $conn->close();
+}
+
+function insertUser(){
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "phishing";
+
+    // Create connection
+    $conn = new mysqli($servername, $username, $password, $dbname);
+    // Check connection
+    if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+    }
+
+    $sql = "INSERT INTO zaposleni (ip)
+    VALUES ('". $_SERVER['REMOTE_ADDR'] . "')";
+
+    if ($conn->query($sql) === TRUE) {
+    //echo "New record created successfully";
+    } else {
+    //echo "Error: " . $sql . "<br>" . $conn->error;
+    }
+
+    $conn->close();
+}
+
+function createNewRetry(){
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "phishing";
+
+    // Create connection
+    $conn = new mysqli($servername, $username, $password, $dbname);
+    // Check connection
+    if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+    }
+
+    $stmt = $conn->prepare("INSERT INTO poskus (datum, datum_konca, zaposleni_fk) VALUES (STR_TO_DATE(?, '%d.%m.%Y %H:%i:%s'), ?, ?)");
+    $stmt->bind_param("sss", $datum, $datum_konca, $id);
+
+    $datum = $_SESSION["start_date"];
+    $datum_konca = null;
+    $id = $_SERVER['REMOTE_ADDR'];
+
+    $stmt->execute();
+
+    $conn->close();
+}
+
+
+if(!checkIfUserExists()){
+    insertUser();
+}
+
+session_set_cookie_params(0);
+session_start();
+$_SESSION["start_date"] = date("d.m.Y H:i:s");
+
+createNewRetry();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
