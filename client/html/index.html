@@ -63,33 +63,37 @@
                     </div>
                 </a>
                 <div class="w-100 h-100 d-flex align-items-center justify-content-center">
-                    <div class="zastava">
+                    <div class="zastava" style="position: absolute; z-index: 2;">
                         <i id="fas2" class="fa-solid fa-flag flag-icon hidden" onclick="toggleFlagNoSpam(this)" style="color: red;" data-toggle="tooltip" title="Označi kot nesumljivo"></i>
                         <i id="far2" class="fa-regular fa-flag regular-flag-icon" onclick="toggleFlagSpam(this)"data-toggle="tooltip" title="Označi kot sumljivo"></i>
                     </div>
                 </div>
             </li>
             <li class="nav-item bg-li-1">
+                <div id="overlay-us" class="overlay-btn" onclick="areYouSure('usopenareyousure')">
+                </div>
                 <a id="linklgit" class="nav-link" data-bs-toggle="pill" href="#menu2">
                     <div class="row">
                         <div class="col-10"><div class="sender">luka.petrovic@butale.si</div><div class="sender">Pomembno: Urgentni sestanek</div></div>
                     </div>
                 </a>
                 <div class="w-100 h-100 d-flex align-items-center justify-content-center">
-                    <div class="zastava">
+                    <div class="zastava" style="position: absolute; z-index: 2;">
                         <i id="fas3" class="fa-solid fa-flag flag-icon hidden" onclick="toggleFlagNoSpam(this)" style="color: red;" data-toggle="tooltip" title="Označi kot nesumljivo"></i>
                         <i id="far3" class="fa-regular fa-flag regular-flag-icon" onclick="toggleFlagSpam(this)"data-toggle="tooltip" title="Označi kot sumljivo"></i>
                     </div>
                 </div>
             </li>
             <li class="nav-item">
+                <div id="overlay-pr" class="overlay-btn" onclick="areYouSure('propenareyousure')">
+                </div>
                 <a id="linkpr" class="nav-link" data-bs-toggle="pill" href="#menu3">
                     <div class="row">
                         <div class="col-10"><div class="sender">prodaja@prenosko.xxz.co</div><div class="sender">Neverjetno visoki popusti za podjetja!</div></div>
                     </div>
                 </a>
                 <div class="w-100 h-100 d-flex align-items-center justify-content-center">
-                    <div class="zastava">
+                    <div class="zastava" style="position: absolute; z-index: 2;">
                         <i id="fas4" class="fa-solid fa-flag flag-icon hidden" onclick="toggleFlagNoSpam(this)" style="color: red;" data-toggle="tooltip" title="Označi kot nesumljivo"></i>
                         <i id="far4" class="fa-regular fa-flag regular-flag-icon" onclick="toggleFlagSpam(this)"data-toggle="tooltip" title="Označi kot sumljivo"></i>
                     </div>
@@ -306,6 +310,40 @@
             <br>
             <button id="myBtn" class="btn btn-success btn-lg" onclick="areYouSureYes('poopenareyousure', 'overlay-po', 'link3', 'menu1')">Da</button>
             <button id="incorrectBtn2" class="btn btn-danger btn-lg" onclick="areYouSureNo('poopenareyousure')">Ne</button>
+        </div>
+    </div>
+</div>
+
+<div id="usopenareyousure" class="modal modalwarn" >
+
+    <!-- Modal content -->
+    <div class="modal-content">
+        <div class="text-center">
+            <div class="alert alert-warning">
+                <p>POZOR!<br>Prepričajte se, da ste dobro pregledali naslov pošiljatelja, predvsem njegovo domeno.</p>
+            </div>
+            <p>Ali želite nadaljevati z odpiranjem e-sporočila?
+            </p>
+            <br>
+            <button id="myBtn" class="btn btn-success btn-lg" onclick="areYouSureYes('usopenareyousure', 'overlay-us', 'linklgit', 'menu2')">Da</button>
+            <button id="incorrectBtn2" class="btn btn-danger btn-lg" onclick="areYouSureNo('usopenareyousure')">Ne</button>
+        </div>
+    </div>
+</div>
+
+<div id="propenareyousure" class="modal modalwarn" >
+
+    <!-- Modal content -->
+    <div class="modal-content">
+        <div class="text-center">
+            <div class="alert alert-warning">
+                <p>POZOR!<br>Prepričajte se, da ste dobro pregledali naslov pošiljatelja, predvsem njegovo domeno.</p>
+            </div>
+            <p>Ali želite nadaljevati z odpiranjem e-sporočila?
+            </p>
+            <br>
+            <button id="myBtn" class="btn btn-success btn-lg" onclick="areYouSureYes('propenareyousure', 'overlay-pr', 'linkpr', 'menu3')">Da</button>
+            <button id="incorrectBtn2" class="btn btn-danger btn-lg" onclick="areYouSureNo('propenareyousure')">Ne</button>
         </div>
     </div>
 </div>
