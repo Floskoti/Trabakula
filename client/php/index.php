@@ -89,7 +89,7 @@ session_start();
 $_SESSION["start_date"] = date("d.m.Y H:i:s");
 
 // Odkomentiraj!!!!!!!!!!!!!!!!!!
-createNewRetry();
+//createNewRetry();
 
 ?>
 
@@ -143,7 +143,7 @@ createNewRetry();
                         </div>
                     </a>
                     <div class="w-100 h-100 d-flex align-items-center justify-content-center">
-                        <div class="zastava" style="position: absolute; z-index: 2;">
+                        <div id="prva" class="zastava" style="position: absolute; z-index: 2;">
                             <i id="fas1" class="fa-solid fa-flag flag-icon hidden" onclick="toggleFlagNoSpam(this)" style="color: red;" data-toggle="tooltip" title="Označi kot nesumljivo"></i>
                             <i id="far1" class="fa-regular fa-flag regular-flag-icon" onclick="toggleFlagSpam(this)"data-toggle="tooltip" title="Označi kot sumljivo"></i>
                         </div>
@@ -158,7 +158,7 @@ createNewRetry();
                     </div>
                 </a>
                 <div class="w-100 h-100 d-flex align-items-center justify-content-center">
-                    <div class="zastava" style="position: absolute; z-index: 2;">
+                    <div id="druga" class="zastava" style="position: absolute; z-index: 2;">
                         <i id="fas2" class="fa-solid fa-flag flag-icon hidden" onclick="toggleFlagNoSpam(this)" style="color: red;" data-toggle="tooltip" title="Označi kot nesumljivo"></i>
                         <i id="far2" class="fa-regular fa-flag regular-flag-icon" onclick="toggleFlagSpam(this)"data-toggle="tooltip" title="Označi kot sumljivo"></i>
                     </div>
@@ -173,7 +173,7 @@ createNewRetry();
                     </div>
                 </a>
                 <div class="w-100 h-100 d-flex align-items-center justify-content-center">
-                    <div class="zastava" style="position: absolute; z-index: 2;">
+                    <div id="tretja" class="zastava" style="position: absolute; z-index: 2;">
                         <i id="fas3" class="fa-solid fa-flag flag-icon hidden" onclick="toggleFlagNoSpam(this)" style="color: red;" data-toggle="tooltip" title="Označi kot nesumljivo"></i>
                         <i id="far3" class="fa-regular fa-flag regular-flag-icon" onclick="toggleFlagSpam(this)"data-toggle="tooltip" title="Označi kot sumljivo"></i>
                     </div>
@@ -188,7 +188,7 @@ createNewRetry();
                     </div>
                 </a>
                 <div class="w-100 h-100 d-flex align-items-center justify-content-center">
-                    <div class="zastava" style="position: absolute; z-index: 2;">
+                    <div id="cetrta" class="zastava" style="position: absolute; z-index: 2;">
                         <i id="fas4" class="fa-solid fa-flag flag-icon hidden" onclick="toggleFlagNoSpam(this)" style="color: red;" data-toggle="tooltip" title="Označi kot nesumljivo"></i>
                         <i id="far4" class="fa-regular fa-flag regular-flag-icon" onclick="toggleFlagSpam(this)"data-toggle="tooltip" title="Označi kot sumljivo"></i>
                     </div>
@@ -649,6 +649,7 @@ function toggleFlagSpam(clickedIcon, event) {
                      icon.classList.toggle("hidden");
                     var icon = document.querySelector('#fas1');
                     icon.classList.toggle("hidden");
+                    document.getElementById("prva").style = "pointer-events:none";
                     var mail = document.getElementById("linkfb");
                      mail.classList.toggle("disabled");
                      mail.classList.toggle("active");
@@ -684,6 +685,30 @@ function toggleFlagSpam(clickedIcon, event) {
                         pozdravcont.classList.toggle("show");
                     }
                      break;
+        case "far2open": clickedIcon.classList.toggle("hidden");
+            var icon = document.querySelector('#fas2open');
+            icon.classList.toggle("hidden");
+            var icon = document.querySelector('#far2');
+                icon.classList.toggle("hidden");
+            var icon = document.querySelector('#fas2');
+            icon.classList.toggle("hidden");
+            document.getElementById("druga").style = "pointer-events:none";
+            var mail = document.getElementById("link3");
+                mail.classList.toggle("disabled");
+                mail.classList.toggle("active");
+
+            var pozdravbtn = document.getElementById("pozdravbtn");
+            pozdravbtn.classList.toggle("active");
+            var pozdravcont = document.getElementById("hello");
+            pozdravcont.classList.toggle("active");
+            pozdravcont.classList.toggle("show");
+            var pozdravcont = document.getElementById("home");
+            if(pozdravcont.classList.contains("active")){
+                pozdravcont.classList.toggle("active");
+                pozdravcont.classList.toggle("show");
+            }
+            modalfbopen.style.display = "block";
+            break;
         case "far3": clickedIcon.classList.toggle("hidden");
                     var icon = document.querySelector('#fas3');
                     icon.classList.toggle("hidden");
@@ -697,7 +722,7 @@ function toggleFlagSpam(clickedIcon, event) {
                     var pozdravcont = document.getElementById("hello");
                     pozdravcont.classList.toggle("active");
                     pozdravcont.classList.toggle("show");
-                    var pozdravcont = document.getElementById("home");
+                    var pozdravcont = document.getElementById("menu2");
                     if(pozdravcont.classList.contains("active")){
                         pozdravcont.classList.toggle("active");
                         pozdravcont.classList.toggle("show");

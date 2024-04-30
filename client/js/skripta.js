@@ -52,12 +52,14 @@ function areYouSureYes(modalID, divID, navitemID, contentID) {
     document.getElementById(navitemID).classList.add("active");
     document.getElementById(contentID).classList.add("active");
     document.getElementById(contentID).classList.add("show");
+    sendData(1);
 }
 function areYouSureNo(modalID) {
     // Get the modal
     var modal = document.getElementById(modalID)
     // Close the modal upon clicking
     modal.style.display = "none";
+    sendData(2);
 }
 
 function sendData(idGumba) {
