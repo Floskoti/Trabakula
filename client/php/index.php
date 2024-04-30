@@ -88,6 +88,7 @@ session_set_cookie_params(0);
 session_start();
 $_SESSION["start_date"] = date("d.m.Y H:i:s");
 
+// Odkomentiraj!!!!!!!!!!!!!!!!!!
 createNewRetry();
 
 ?>

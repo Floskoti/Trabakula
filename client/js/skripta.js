@@ -10,6 +10,24 @@ if(flagged != null) {
 function areYouSure(modalID){
     var modal = document.getElementById(modalID);
     modal.style.display = "block";
+    switch(modalID){
+        case 'fbopenareyousure':
+            // Hardcoded id v podatkovni bazi
+            sendData(10);
+            break;
+        case 'poopenareyousure':
+            // Hardcoded id v podatkovni bazi
+            sendData(20);
+            break;
+        case 'usopenareyousure':
+            // Hardcoded id v podatkovni bazi
+            sendData(30);
+            break;
+        case 'propenareyousure':
+            // Hardcoded id v podatkovni bazi
+            sendData(40);
+            break;
+    }
 }
 function areYouSureYes(modalID, divID, navitemID, contentID) {
     // Get the modal
@@ -40,4 +58,20 @@ function areYouSureNo(modalID) {
     var modal = document.getElementById(modalID)
     // Close the modal upon clicking
     modal.style.display = "none";
+}
+
+function sendData(idGumba) {
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+            if (xhr.status === 200) {
+                console.log(xhr.responseText);
+            } else {
+                console.error('Request failed:', xhr.status);
+            }
+        }
+    };
+    xhr.open("POST", "sendEvent.php", true);
+    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    xhr.send("idGumba=" + idGumba);
 }
