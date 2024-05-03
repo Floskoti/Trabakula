@@ -173,8 +173,8 @@ $_SESSION["start_date"] = date("d.m.Y H:i:s");
                 </a>
                 <div class="w-100 h-100 d-flex align-items-center justify-content-center">
                     <div id="tretja" class="zastava" style="position: absolute; z-index: 2;">
-                        <i id="fas3" class="fa-solid fa-flag flag-icon hidden" onclick="toggleFlagNoSpam(this)" style="color: red;" data-toggle="tooltip" title="Označi kot nesumljivo"></i>
-                        <i id="far3" class="fa-regular fa-flag regular-flag-icon" onclick="toggleFlagSpam(this)"data-toggle="tooltip" title="Označi kot sumljivo"></i>
+                        <i id="fas3" class="fa-solid fa-flag flag-icon hidden" style="color: red;" data-toggle="tooltip" title="Označi kot nesumljivo"></i>
+                        <i id="far3" class="fa-regular fa-flag regular-flag-icon" onclick="toggleFlagSpam(this, 'linklgit', 'myModalinc', 'fas3', 'overlay-us', 'myModalfbopen')" data-toggle="tooltip" title="Označi kot sumljivo"></i>
                     </div>
                 </div>
             </li>
@@ -253,10 +253,6 @@ $_SESSION["start_date"] = date("d.m.Y H:i:s");
                         <h3 class="from-tag" style="display: inline-block;">L</h3>
                         <span style="position: relative; top: -10px">Luka Petrovič</span>
                         <span style="position: relative; left: -98px; top: 5px">To: direktor@butale.si</span>
-                        <div class="zastava">
-                            <i id="fas3open" class="fa-solid fa-flag flag-icon hidden" onclick="toggleFlagNoSpam(this)" style="color: red;" data-toggle="tooltip" title="Označi kot nesumljivo"></i>
-                            <i id="far3open" class="fa-regular fa-flag regular-flag-icon" onclick="toggleFlagSpam(this)"data-toggle="tooltip" title="Označi kot sumljivo"></i>
-                        </div>
                         <h5>Zadeva: Urgentni sestanek!</h5>
                     </div>
                     
