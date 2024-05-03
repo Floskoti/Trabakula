@@ -88,7 +88,7 @@ session_set_cookie_params(0);
 session_start();
 $_SESSION["start_date"] = date("d.m.Y H:i:s");
 
-// Odkomentiraj!!!!!!!!!!!!!!!!!!
+// Za produkcijo obvezno Odkomentiraj!!!!!!!!!!!!!!!!!!
 //createNewRetry();
 
 ?>
@@ -104,7 +104,6 @@ $_SESSION["start_date"] = date("d.m.Y H:i:s");
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/stil.css">
-    <script src="../js/skripta.js"></script>
 </head>
 <body onload="modalFunc()">
 <div class="container">
@@ -144,8 +143,8 @@ $_SESSION["start_date"] = date("d.m.Y H:i:s");
                     </a>
                     <div class="w-100 h-100 d-flex align-items-center justify-content-center">
                         <div id="prva" class="zastava" style="position: absolute; z-index: 2;">
-                            <i id="fas1" class="fa-solid fa-flag flag-icon hidden" onclick="toggleFlagNoSpam(this)" style="color: red;" data-toggle="tooltip" title="Označi kot nesumljivo"></i>
-                            <i id="far1" class="fa-regular fa-flag regular-flag-icon" onclick="toggleFlagSpam(this)"data-toggle="tooltip" title="Označi kot sumljivo"></i>
+                            <i id="fas1" class="fa-solid fa-flag flag-icon hidden" style="color: red;" data-toggle="tooltip" title="Označi kot nesumljivo"></i>
+                            <i id="far1" class="fa-regular fa-flag regular-flag-icon" onclick="toggleFlagSpam(this, 'linkfb', 'myModalfb', 'fas1', 'overlay-fb', 'myModalfbopen')" data-toggle="tooltip" title="Označi kot sumljivo"></i>
                         </div>
                     </div>
             </li>
@@ -159,8 +158,8 @@ $_SESSION["start_date"] = date("d.m.Y H:i:s");
                 </a>
                 <div class="w-100 h-100 d-flex align-items-center justify-content-center">
                     <div id="druga" class="zastava" style="position: absolute; z-index: 2;">
-                        <i id="fas2" class="fa-solid fa-flag flag-icon hidden" onclick="toggleFlagNoSpam(this)" style="color: red;" data-toggle="tooltip" title="Označi kot nesumljivo"></i>
-                        <i id="far2" class="fa-regular fa-flag regular-flag-icon" onclick="toggleFlagSpam(this)"data-toggle="tooltip" title="Označi kot sumljivo"></i>
+                        <i id="fas2" class="fa-solid fa-flag flag-icon hidden" style="color: red;" data-toggle="tooltip" title="Označi kot nesumljivo"></i>
+                        <i id="far2" class="fa-regular fa-flag regular-flag-icon" onclick="toggleFlagSpam(this, 'link3', 'myModalfb', 'fas2', 'overlay-po', 'myModalfbopen')"data-toggle="tooltip" title="Označi kot sumljivo"></i>
                     </div>
                 </div>
             </li>
@@ -210,10 +209,6 @@ $_SESSION["start_date"] = date("d.m.Y H:i:s");
                         <h3 class="from-tag" style="display: inline-block;">F</h3>
                         <span style="position: relative; top: -10px">Facebook</span>
                         <span style="position: relative; left: -71px; top: 5px">To: direktor@butale.si</span>
-                        <div class="zastava">
-                            <i id="fas1open" class="fa-solid fa-flag flag-icon hidden" onclick="toggleFlagNoSpam(this)" style="color: red;" data-toggle="tooltip" title="Označi kot nesumljivo"></i>
-                            <i id="far1open" class="fa-regular fa-flag regular-flag-icon" onclick="toggleFlagSpam(this)"data-toggle="tooltip" title="Označi kot sumljivo"></i>
-                        </div>
                         <h5>Zadeva: Vaše geslo potrebuje obnovitev!</h5>
                     </div>
                     
@@ -239,10 +234,6 @@ $_SESSION["start_date"] = date("d.m.Y H:i:s");
                         <h3 class="from-tag" style="display: inline-block;">J</h3>
                         <span style="position: relative; top: -10px">Janez Selski</span>
                         <span style="position: relative; left: -87px; top: 5px">To: direktor@butale.si</span>
-                        <div class="zastava">
-                            <i id="fas2open" class="fa-solid fa-flag flag-icon hidden" onclick="toggleFlagNoSpam(this)" style="color: red;" data-toggle="tooltip" title="Označi kot nesumljivo"></i>
-                            <i id="far2open" class="fa-regular fa-flag regular-flag-icon" onclick="toggleFlagSpam(this)"data-toggle="tooltip" title="Označi kot sumljivo"></i>
-                        </div>
                         <h5>Zadeva: Polletno finančno poročilo</h5>
                     </div>
                     <br>
@@ -554,226 +545,7 @@ $_SESSION["start_date"] = date("d.m.Y H:i:s");
         modal.style.display = "none";
     }
     }
-
-    function toggleFlagNoSpam(clickedIcon) {
-    switch(clickedIcon.id){
-        case "fas1": clickedIcon.classList.toggle("hidden");
-                    var icon = document.querySelector('#far1');
-                     icon.classList.toggle("hidden");
-                    var mail = document.getElementById("linkfb");
-                     mail.classList.toggle("disabled");
-                    var icon = document.querySelector('#far1open');
-                     icon.classList.toggle("hidden");
-                    var icon = document.querySelector('#fas1open');
-                    icon.classList.toggle("hidden");
-                     break;
-        case "fas1open": clickedIcon.classList.toggle("hidden");
-                    var icon = document.querySelector('#far1open');
-                     icon.classList.toggle("hidden");
-                    var icon = document.querySelector('#fas1');
-                    icon.classList.toggle("hidden");
-                    var icon = document.querySelector('#far1');
-                     icon.classList.toggle("hidden");
-                    var mail = document.getElementById("linkfb");
-                     mail.classList.toggle("disabled");
-                     break;
-        case "fas2": clickedIcon.classList.toggle("hidden");
-                    var icon = document.querySelector('#far2');
-                     icon.classList.toggle("hidden");
-                    var mail = document.getElementById("link3");
-                     mail.classList.toggle("disabled");
-                    var icon = document.querySelector('#far2open');
-                     icon.classList.toggle("hidden");
-                    var icon = document.querySelector('#fas2open');
-                    icon.classList.toggle("hidden");
-                     break;
-        case "fas3": clickedIcon.classList.toggle("hidden");
-                    var icon = document.querySelector('#far3');
-                     icon.classList.toggle("hidden");
-                    var mail = document.getElementById("linklgit");
-                     mail.classList.toggle("disabled");
-                    var icon = document.querySelector('#far3open');
-                     icon.classList.toggle("hidden");
-                    var icon = document.querySelector('#fas3open');
-                    icon.classList.toggle("hidden");
-                     break;
-        case "fas4": clickedIcon.classList.toggle("hidden");
-                    var icon = document.querySelector('#far4');
-                     icon.classList.toggle("hidden");
-                    var mail = document.getElementById("linkpr");
-                     mail.classList.toggle("disabled");
-                    var icon = document.querySelector('#far4open');
-                     icon.classList.toggle("hidden");
-                    var icon = document.querySelector('#fas4open');
-                    icon.classList.toggle("hidden");
-                     break;
-        case "fas4open": clickedIcon.classList.toggle("hidden");
-                    var icon = document.querySelector('#far4open');
-                     icon.classList.toggle("hidden");
-                    var icon = document.querySelector('#fas4');
-                    icon.classList.toggle("hidden");
-                    var icon = document.querySelector('#far4');
-                     icon.classList.toggle("hidden");
-                    var mail = document.getElementById("linkpr");
-                     mail.classList.toggle("disabled");
-                     break;
-        default: break;
-    }
-}
-
-function toggleFlagSpam(clickedIcon, event) {
-    switch(clickedIcon.id){
-        case "far1": clickedIcon.classList.toggle("hidden");
-                    var icon = document.querySelector('#fas1');
-                    icon.classList.toggle("hidden");
-                    var mail = document.getElementById("linkfb");
-                     mail.classList.toggle("disabled");
-                     modalfb.style.display = "block";
-                     mail.classList.toggle("active");
-
-                    var pozdravbtn = document.getElementById("pozdravbtn");
-                    pozdravbtn.classList.toggle("active");
-                    var pozdravcont = document.getElementById("hello");
-                    pozdravcont.classList.toggle("active");
-                    pozdravcont.classList.toggle("show");
-                    var pozdravcont = document.getElementById("home");
-                    if(pozdravcont.classList.contains("active")){
-                        pozdravcont.classList.toggle("active");
-                        pozdravcont.classList.toggle("show");
-                    }
-                     break;
-        case "far1open": clickedIcon.classList.toggle("hidden");
-                    var icon = document.querySelector('#fas1open');
-                    icon.classList.toggle("hidden");
-                    var icon = document.querySelector('#far1');
-                     icon.classList.toggle("hidden");
-                    var icon = document.querySelector('#fas1');
-                    icon.classList.toggle("hidden");
-                    document.getElementById("prva").style = "pointer-events:none";
-                    var mail = document.getElementById("linkfb");
-                     mail.classList.toggle("disabled");
-                     mail.classList.toggle("active");
-
-                    var pozdravbtn = document.getElementById("pozdravbtn");
-                    pozdravbtn.classList.toggle("active");
-                    var pozdravcont = document.getElementById("hello");
-                    pozdravcont.classList.toggle("active");
-                    pozdravcont.classList.toggle("show");
-                    var pozdravcont = document.getElementById("home");
-                    if(pozdravcont.classList.contains("active")){
-                        pozdravcont.classList.toggle("active");
-                        pozdravcont.classList.toggle("show");
-                    }
-                     modalfbopen.style.display = "block";
-                     break;
-        case "far2": clickedIcon.classList.toggle("hidden");
-                    var icon = document.querySelector('#fas2');
-                    icon.classList.toggle("hidden");
-                    var mail = document.getElementById("link3");
-                     mail.classList.toggle("disabled");
-                     modalfb.style.display = "block";
-                     mail.classList.toggle("active");
-
-                    var pozdravbtn = document.getElementById("pozdravbtn");
-                    pozdravbtn.classList.toggle("active");
-                    var pozdravcont = document.getElementById("hello");
-                    pozdravcont.classList.toggle("active");
-                    pozdravcont.classList.toggle("show");
-                    var pozdravcont = document.getElementById("home");
-                    if(pozdravcont.classList.contains("active")){
-                        pozdravcont.classList.toggle("active");
-                        pozdravcont.classList.toggle("show");
-                    }
-                     break;
-        case "far2open": clickedIcon.classList.toggle("hidden");
-            var icon = document.querySelector('#fas2open');
-            icon.classList.toggle("hidden");
-            var icon = document.querySelector('#far2');
-                icon.classList.toggle("hidden");
-            var icon = document.querySelector('#fas2');
-            icon.classList.toggle("hidden");
-            document.getElementById("druga").style = "pointer-events:none";
-            var mail = document.getElementById("link3");
-                mail.classList.toggle("disabled");
-                mail.classList.toggle("active");
-
-            var pozdravbtn = document.getElementById("pozdravbtn");
-            pozdravbtn.classList.toggle("active");
-            var pozdravcont = document.getElementById("hello");
-            pozdravcont.classList.toggle("active");
-            pozdravcont.classList.toggle("show");
-            var pozdravcont = document.getElementById("home");
-            if(pozdravcont.classList.contains("active")){
-                pozdravcont.classList.toggle("active");
-                pozdravcont.classList.toggle("show");
-            }
-            modalfbopen.style.display = "block";
-            break;
-        case "far3": clickedIcon.classList.toggle("hidden");
-                    var icon = document.querySelector('#fas3');
-                    icon.classList.toggle("hidden");
-                    var mail = document.getElementById("linklgit");
-                     mail.classList.toggle("disabled");
-                     modalinc.style.display = "block";
-                     mail.classList.toggle("active");
-
-                    var pozdravbtn = document.getElementById("pozdravbtn");
-                    pozdravbtn.classList.toggle("active");
-                    var pozdravcont = document.getElementById("hello");
-                    pozdravcont.classList.toggle("active");
-                    pozdravcont.classList.toggle("show");
-                    var pozdravcont = document.getElementById("menu2");
-                    if(pozdravcont.classList.contains("active")){
-                        pozdravcont.classList.toggle("active");
-                        pozdravcont.classList.toggle("show");
-                    }
-                     break;
-        case "far4": clickedIcon.classList.toggle("hidden");
-                    var icon = document.querySelector('#fas4');
-                    icon.classList.toggle("hidden");
-                    var mail = document.getElementById("linkpr");
-                     mail.classList.toggle("disabled");
-                     modalfb.style.display = "block";
-                     mail.classList.toggle("active");
-
-                    var pozdravbtn = document.getElementById("pozdravbtn");
-                    pozdravbtn.classList.toggle("active");
-                    var pozdravcont = document.getElementById("hello");
-                    pozdravcont.classList.toggle("active");
-                    pozdravcont.classList.toggle("show");
-                    var pozdravcont = document.getElementById("menu3");
-                    if(pozdravcont.classList.contains("active")){
-                        pozdravcont.classList.toggle("active");
-                        pozdravcont.classList.toggle("show");
-                    }
-                     break;
-        case "far4open": clickedIcon.classList.toggle("hidden");
-                    var icon = document.querySelector('#fas4open');
-                    icon.classList.toggle("hidden");
-                    var icon = document.querySelector('#far4');
-                     icon.classList.toggle("hidden");
-                    var icon = document.querySelector('#fas4');
-                    icon.classList.toggle("hidden");
-                    var mail = document.getElementById("linkpr");
-                     mail.classList.toggle("disabled");
-                     mail.classList.toggle("active");
-
-                    var pozdravbtn = document.getElementById("pozdravbtn");
-                    pozdravbtn.classList.toggle("active");
-                    var pozdravcont = document.getElementById("hello");
-                    pozdravcont.classList.toggle("active");
-                    pozdravcont.classList.toggle("show");
-                    var pozdravcont = document.getElementById("menu3");
-                    if(pozdravcont.classList.contains("active")){
-                        pozdravcont.classList.toggle("active");
-                        pozdravcont.classList.toggle("show");
-                    }
-                     modalfbopen.style.display = "block";
-                     break;
-        default: break;
-    }
-    
-}
 </script>
+<script src="../js/skripta.js"></script>
 </body>
 </html>

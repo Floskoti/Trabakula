@@ -77,3 +77,28 @@ function sendData(idGumba) {
     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     xhr.send("idGumba=" + idGumba);
 }
+
+function toggleFlagSpam(thisFlag, mailId, modalId, solidFlagId, overlayId, modalOpenId){
+    // Preveri, če je email prebran/odprt
+    // Glede na to, prikaži različen popup
+    if(document.getElementById(mailId).classList.contains('active')){
+        document.getElementById(modalOpenId).style.display = "block";
+        document.getElementById(solidFlagId).classList.toggle("hidden");
+        thisFlag.classList.toggle("hidden");
+        document.getElementById(overlayId).classList.toggle("hidden");
+        document.getElementById(mailId).style.pointerEvents = "none";
+        document.getElementById(solidFlagId).style.pointerEvents = "none";
+        thisFlag.style.pointerEvents = "none";
+        thisFlag.parentElement.style.pointerEvents = "none";
+    }
+    else{
+        document.getElementById(modalId).style.display = "block";
+        document.getElementById(solidFlagId).classList.toggle("hidden");
+        thisFlag.classList.toggle("hidden");
+        document.getElementById(overlayId).classList.toggle("hidden");
+        document.getElementById(mailId).style.pointerEvents = "none";
+        document.getElementById(solidFlagId).style.pointerEvents = "none";
+        thisFlag.style.pointerEvents = "none";
+        thisFlag.parentElement.style.pointerEvents = "none";
+    }
+}
