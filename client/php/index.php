@@ -165,7 +165,7 @@ $_SESSION["start_date"] = date("d.m.Y H:i:s");
                 <div class="w-100 h-100 d-flex align-items-center justify-content-center">
                     <div id="druga" class="zastava" style="position: absolute; z-index: 2;">
                         <i id="fas2" class="fa-solid fa-flag flag-icon hidden" style="color: red;" data-toggle="tooltip" title="Označi kot nesumljivo"></i>
-                        <i id="far2" class="fa-regular fa-flag regular-flag-icon" onclick="toggleFlagSpam(this, 'link3', 'myModalfb', 'fas2', 'overlay-po', 'myModalfbopen')"data-toggle="tooltip" title="Označi kot sumljivo"></i>
+                        <i id="far2" class="fa-regular fa-flag regular-flag-icon" onclick="toggleFlagSpam(this, 'link3', 'myModalpo', 'fas2', 'overlay-po', 'myModalfbopen')"data-toggle="tooltip" title="Označi kot sumljivo"></i>
                     </div>
                 </div>
             </li>
@@ -194,8 +194,8 @@ $_SESSION["start_date"] = date("d.m.Y H:i:s");
                 </a>
                 <div class="w-100 h-100 d-flex align-items-center justify-content-center">
                     <div id="cetrta" class="zastava" style="position: absolute; z-index: 2;">
-                        <i id="fas4" class="fa-solid fa-flag flag-icon hidden" onclick="toggleFlagNoSpam(this)" style="color: red;" data-toggle="tooltip" title="Označi kot nesumljivo"></i>
-                        <i id="far4" class="fa-regular fa-flag regular-flag-icon" onclick="toggleFlagSpam(this, 'cetrta', 'myModalfb', 'fas4', 'overlay-pr', 'myModalfb')"data-toggle="tooltip" title="Označi kot sumljivo"></i>
+                        <i id="fas4" class="fa-solid fa-flag flag-icon hidden" style="color: red;" data-toggle="tooltip" title="Označi kot nesumljivo"></i>
+                        <i id="far4" class="fa-regular fa-flag regular-flag-icon" onclick="toggleFlagSpam(this, 'linkpr', 'myModalpr', 'fas4', 'overlay-pr', 'myModalfbopen')"data-toggle="tooltip" title="Označi kot sumljivo"></i>
                     </div>
             </ul>
         </div>
@@ -285,10 +285,6 @@ $_SESSION["start_date"] = date("d.m.Y H:i:s");
                         <h3 class="from-tag" style="display: inline-block;">P</h3>
                         <span style="position: relative; top: -10px">Prenosko</span>
                         <span style="position: relative; left: -71px; top: 5px">To: direktor@butale.si</span>
-                        <div class="zastava">
-                            <i id="fas4open" class="fa-solid fa-flag flag-icon hidden" onclick="toggleFlagNoSpam(this)" style="color: red;" data-toggle="tooltip" title="Označi kot nesumljivo"></i>
-                            <i id="far4open" class="fa-regular fa-flag regular-flag-icon" onclick="toggleFlagSpam(this)"data-toggle="tooltip" title="Označi kot sumljivo"></i>
-                        </div>
                         <h5>Zadeva: Neverjetno visoki popusti za podjetja!</h5>
                     </div>
                     <br>
@@ -302,7 +298,6 @@ $_SESSION["start_date"] = date("d.m.Y H:i:s");
 </div>
 
 <div id="myModalfb" class="modal modalcorrect" >
-
     <!-- Modal content -->
     <div class="modal-content">
         <div class="closefb float-end" style="width:25px;">&times;</div>
@@ -315,25 +310,47 @@ $_SESSION["start_date"] = date("d.m.Y H:i:s");
             </p>
         </div>
     </div>
-
+</div>
+<div id="myModalpo" class="modal modalcorrect" >
+    <!-- Modal content -->
+    <div class="modal-content">
+        <div class="closepo float-end" style="width:25px;">&times;</div>
+        <div class="text-center">
+            <div class="alert alert-success">
+                <p style="margin:0;">Pravilno ste označili sumljivo sporočilo</p>
+            </div>
+            <p>Kljub temu, da je naslov zahteval takojšnjo pozornost, se splača podrobno pogledati ime in domeno pošiljateljevega naslova.
+            </p>
+        </div>
+    </div>
+</div>
+<div id="myModalpr" class="modal modalcorrect" >
+    <!-- Modal content -->
+    <div class="modal-content">
+        <div class="closepr float-end" style="width:25px;">&times;</div>
+        <div class="text-center">
+            <div class="alert alert-success">
+                <p style="margin:0;">Pravilno ste označili sumljivo sporočilo</p>
+            </div>
+            <p>Kljub temu, da je naslov precej vabljiv, se splača podrobno pogledati ime in domeno pošiljateljevega naslova.
+            </p>
+        </div>
+    </div>
 </div>
 <div id="myModalinc" class="modal modalincorrect" >
-
     <!-- Modal content -->
     <div class="modal-content">
         <div class="closeinc float-end" style="width:25px;">&times;</div>
         <div class="text-center">
             <div class="alert alert-danger">
-                <p style="margin:0;">Napačno ste označili neškodljivo sporočilo</p>
+                <p style="margin:0;">Napačno ste označili sporočilo</p>
             </div>
-            <p>Domena pošiljateljevega naslova je domena vašega podjetja. Sporočilo ni bilo zlonamerno. V tem primeru je pomembnejša pravilna domena, saj zaposleni dobijo poštni naslov, ko so zaposleni v podjetju, zato zunanja oseba ne more imeti poštnega naslova z domeno podjetja.
+            <p>Domena pošiljateljevega naslova je domena vašega podjetja. Sporočilo ni bilo zlonamerno.
             </p>
         </div>
     </div>
-
 </div>
 <div id="myModalnateg" class="modal modalnateg" >
-
     <!-- Modal content -->
     <div class="modal-content">
         <div class="closenateg float-end" style="width:25px;">&times;</div>
@@ -349,10 +366,8 @@ $_SESSION["start_date"] = date("d.m.Y H:i:s");
             </p>
         </div>
     </div>
-
 </div>
 <div id="myModalfbopen" class="modal modalwarn" >
-
     <!-- Modal content -->
     <div class="modal-content">
         <div class="closefbopen float-end" style="width:25px;">&times;</div>
@@ -369,7 +384,6 @@ $_SESSION["start_date"] = date("d.m.Y H:i:s");
 </div>
 
 <div id="fbopenareyousure" class="modal modalwarn" >
-
     <!-- Modal content -->
     <div class="modal-content">
         <div class="text-center">
@@ -386,7 +400,6 @@ $_SESSION["start_date"] = date("d.m.Y H:i:s");
 </div>
 
 <div id="poopenareyousure" class="modal modalwarn" >
-
     <!-- Modal content -->
     <div class="modal-content">
         <div class="text-center">
@@ -403,7 +416,6 @@ $_SESSION["start_date"] = date("d.m.Y H:i:s");
 </div>
 
 <div id="usopenareyousure" class="modal modalwarn" >
-
     <!-- Modal content -->
     <div class="modal-content">
         <div class="text-center">
@@ -420,7 +432,6 @@ $_SESSION["start_date"] = date("d.m.Y H:i:s");
 </div>
 
 <div id="propenareyousure" class="modal modalwarn" >
-
     <!-- Modal content -->
     <div class="modal-content">
         <div class="text-center">
@@ -446,6 +457,22 @@ $_SESSION["start_date"] = date("d.m.Y H:i:s");
     // When the user clicks on <span> (x), close the modal
     spanfb.onclick = function() {
     modalfb.style.display = "none";
+    }
+
+    var modalpo = document.getElementById("myModalpo");
+
+    var spanpo = document.getElementsByClassName("closepo")[0];
+
+    spanpo.onclick = function() {
+    modalpo.style.display = "none";
+    }
+
+    var modalpr = document.getElementById("myModalpr");
+
+    var spanpr = document.getElementsByClassName("closepr")[0];
+
+    spanpr.onclick = function() {
+    modalpr.style.display = "none";
     }
 
     var flagfb = document.getElementById("far1");

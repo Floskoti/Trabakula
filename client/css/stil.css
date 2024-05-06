@@ -94,8 +94,8 @@
     font-weight: bold;
   }
   .close:hover,
-  .close:focus, .closefb:hover, .closefb:focus{
-    color: #000;
+  .close:focus, .closefb:hover, .closefb:focus, .closepo:hover, .closeinc:hover, .closepr:hover{
+    color: red;
     text-decoration: none;
     cursor: pointer;
   }
