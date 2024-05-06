@@ -114,9 +114,15 @@ $_SESSION["start_date"] = date("d.m.Y H:i:s");
         <div class="modal-content">
             <div class="close float-end" style="width:25px;">&times;</div>
             <div class="text-center">
+                <h3>NAVODILA</h3>
                 <p>Postavljeni ste v vlogo direktorja slovenskega podjetja Butale d.o.o.</p>
                 <p>V službeni poštni predal ste prejeli nekaj novih sporočil, preglejte jih.</p>
-                <p>Z zastavico lahko označite sumljiva sporočila.</p>
+                <p>Z zastavico lahko označite sumljiva sporočila.
+                    <div class="test-zastava">
+                        <i class="fa-solid fa-flag flag-icon hidden" style="color: red;" data-toggle="tooltip" title="Označi kot nesumljivo"></i>
+                        <i class="fa-regular fa-flag regular-flag-icon" data-toggle="tooltip" title="Označi kot sumljivo"></i>
+                    </div>
+                </p>
             </div>
         </div>
     
@@ -174,7 +180,7 @@ $_SESSION["start_date"] = date("d.m.Y H:i:s");
                 <div class="w-100 h-100 d-flex align-items-center justify-content-center">
                     <div id="tretja" class="zastava" style="position: absolute; z-index: 2;">
                         <i id="fas3" class="fa-solid fa-flag flag-icon hidden" style="color: red;" data-toggle="tooltip" title="Označi kot nesumljivo"></i>
-                        <i id="far3" class="fa-regular fa-flag regular-flag-icon" onclick="toggleFlagSpam(this, 'linklgit', 'myModalinc', 'fas3', 'overlay-us', 'myModalfbopen')" data-toggle="tooltip" title="Označi kot sumljivo"></i>
+                        <i id="far3" class="fa-regular fa-flag regular-flag-icon" onclick="toggleFlagSpam(this, 'linklgit', 'myModalinc', 'fas3', 'overlay-us', 'myModalinc')" data-toggle="tooltip" title="Označi kot sumljivo"></i>
                     </div>
                 </div>
             </li>
@@ -183,13 +189,13 @@ $_SESSION["start_date"] = date("d.m.Y H:i:s");
                 </div>
                 <a id="linkpr" class="nav-link" data-bs-toggle="pill" href="#menu3">
                     <div class="row">
-                        <div class="col-10"><div class="sender">prodaja@prenosko.xxz.co</div><div class="sender">Neverjetno visoki popusti za podjetja!</div></div>
+                        <div class="col-10"><div class="sender">prodaja@prenosnik-pocenipc.com</div><div class="sender">Neverjetno visoki popusti za podjetja!</div></div>
                     </div>
                 </a>
                 <div class="w-100 h-100 d-flex align-items-center justify-content-center">
                     <div id="cetrta" class="zastava" style="position: absolute; z-index: 2;">
                         <i id="fas4" class="fa-solid fa-flag flag-icon hidden" onclick="toggleFlagNoSpam(this)" style="color: red;" data-toggle="tooltip" title="Označi kot nesumljivo"></i>
-                        <i id="far4" class="fa-regular fa-flag regular-flag-icon" onclick="toggleFlagSpam(this)"data-toggle="tooltip" title="Označi kot sumljivo"></i>
+                        <i id="far4" class="fa-regular fa-flag regular-flag-icon" onclick="toggleFlagSpam(this, 'cetrta', 'myModalfb', 'fas4', 'overlay-pr', 'myModalfb')"data-toggle="tooltip" title="Označi kot sumljivo"></i>
                     </div>
             </ul>
         </div>
@@ -318,7 +324,7 @@ $_SESSION["start_date"] = date("d.m.Y H:i:s");
         <div class="closeinc float-end" style="width:25px;">&times;</div>
         <div class="text-center">
             <div class="alert alert-danger">
-                <p style="margin:0;">Napačno stee označili neškodljivo sporočilo</p>
+                <p style="margin:0;">Napačno ste označili neškodljivo sporočilo</p>
             </div>
             <p>Domena pošiljateljevega naslova je domena vašega podjetja. Sporočilo ni bilo zlonamerno. V tem primeru je pomembnejša pravilna domena, saj zaposleni dobijo poštni naslov, ko so zaposleni v podjetju, zato zunanja oseba ne more imeti poštnega naslova z domeno podjetja.
             </p>

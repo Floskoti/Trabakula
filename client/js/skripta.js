@@ -78,10 +78,36 @@ function sendData(idGumba) {
     xhr.send("idGumba=" + idGumba);
 }
 
+function sendData(idGumba, idZastave) {
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+            if (xhr.status === 200) {
+                console.log(xhr.responseText);
+            } else {
+                console.error('Request failed:', xhr.status);
+            }
+        }
+    };
+    xhr.open("POST", "sendEvent.php", true);
+    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    xhr.send("idGumba=" + idGumba + "&idZastave=" + idZastave);
+}
+
 function toggleFlagSpam(thisFlag, mailId, modalId, solidFlagId, overlayId, modalOpenId){
     // Preveri, če je email prebran/odprt
     // Glede na to, prikaži različen popup
     if(document.getElementById(mailId).classList.contains('active')){
+        // Remove all .active and .show attributes
+        const activeElements = document.querySelectorAll(".active");
+        const showElements = document.querySelectorAll(".show");
+        activeElements.forEach(element => {
+            element.classList.remove("active");
+        });
+        activeElements.forEach(element => {
+            element.classList.remove("show");
+        });
+
         document.getElementById(modalOpenId).style.display = "block";
         document.getElementById(solidFlagId).classList.toggle("hidden");
         thisFlag.classList.toggle("hidden");
@@ -90,6 +116,13 @@ function toggleFlagSpam(thisFlag, mailId, modalId, solidFlagId, overlayId, modal
         document.getElementById(solidFlagId).style.pointerEvents = "none";
         thisFlag.style.pointerEvents = "none";
         thisFlag.parentElement.style.pointerEvents = "none";
+
+        // Prikaži začetni pogled
+        document.getElementById("pozdravbtn").classList.toggle("active");
+        document.getElementById("hello").classList.toggle("active");
+        document.getElementById("hello").classList.toggle("show");
+
+        checkSelectedFlag(thisFlag, 4);
     }
     else{
         document.getElementById(modalId).style.display = "block";
@@ -100,5 +133,25 @@ function toggleFlagSpam(thisFlag, mailId, modalId, solidFlagId, overlayId, modal
         document.getElementById(solidFlagId).style.pointerEvents = "none";
         thisFlag.style.pointerEvents = "none";
         thisFlag.parentElement.style.pointerEvents = "none";
+
+        checkSelectedFlag(thisFlag, 3);
+    }
+}
+
+function checkSelectedFlag(flag, id){
+    // Hardcoded id-ji v podatkovni bazi
+    switch(flag.parentElement.id){
+        case "prva":
+            sendData(id, "prva");
+            break;
+        case "druga":
+            sendData(id, "druga");
+            break;
+        case "tretja":
+            sendData(id, "tretja");
+            break;
+        case "cetrta":
+            sendData(id, "cetrta");
+            break;
     }
 }

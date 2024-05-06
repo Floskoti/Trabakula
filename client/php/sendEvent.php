@@ -37,8 +37,16 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     die("Connection failed: " . $conn->connect_error);
     }
 
-    $stmt = $conn->prepare("INSERT INTO datum_klika (id_p, id_g, datum) VALUES (?, ?, STR_TO_DATE(?, '%d.%m.%Y %H:%i:%s'))");
-    $stmt->bind_param("sss", $idp, $idGumba, $datum);
+    if(isset($_POST["idZastave"])){
+        $idZastave = $_POST["idZastave"];
+        $stmt = $conn->prepare("INSERT INTO datum_klika (id_p, id_g, datum, extra) VALUES (?, ?, STR_TO_DATE(?, '%d.%m.%Y %H:%i:%s'), '$idZastave')");
+        $stmt->bind_param("sss", $idp, $idGumba, $datum);     
+    }
+    else{
+        $stmt = $conn->prepare("INSERT INTO datum_klika (id_p, id_g, datum) VALUES (?, ?, STR_TO_DATE(?, '%d.%m.%Y %H:%i:%s'))");
+        $stmt->bind_param("sss", $idp, $idGumba, $datum);
+    }
+    
 
     $datum = date("d.m.Y H:i:s");
 
